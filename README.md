@@ -7,13 +7,12 @@
 git clone https://github.com/SIMCA-USI/Simulador_Gazebo.git
 cd Simulador_Gazebo
 
-```markdown
+
 2. Construir el workspace
 ```bash
 colcon build
 source install/setup.bash
 
-```markdown
 3. Ejecutar simulaciones:
 Lanzar el mundo y el robot en Gazebo
 ```bash
