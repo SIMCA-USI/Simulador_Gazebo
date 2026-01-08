@@ -1,5 +1,11 @@
+# Carpetas generadas automáticamente por ROS2
 build/
 install/
 log/
+
+# Archivos compilados de Python
 __pycache__/
 *.pyc
+
+# Configuración local de VS Code
+.vscode/
