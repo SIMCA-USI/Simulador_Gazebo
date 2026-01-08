@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/lagarto/ros2_ws/install/webots_ros2_control/include/**",
+        "/home/lagarto/ros2_ws/install/webots_ros2_driver/include/**",
+        "/home/lagarto/ros2_ws/install/webots_ros2_msgs/include/**",
+        "/home/lagarto/ros2_ws/install/examples_rclcpp_cbg_executor/include/**",
+        "/opt/ros/jazzy/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ros2",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++17"
+    }
+  ],
+  "version": 4
+}
