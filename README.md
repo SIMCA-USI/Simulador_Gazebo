@@ -1,4 +1,4 @@
-# Simulador Gazebo - Workspace ROS2 `ws_mutt`
+# Simulador Gazebo - Workspace ROS2 
 ## Configuración inicial
 
 1. Clonar el repositorio:
