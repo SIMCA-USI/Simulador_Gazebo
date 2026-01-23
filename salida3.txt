@@ -1,0 +1,3 @@
+[INFO] [launch]: All log files can be found below /home/insia/.ros/log/2026-01-21-13-43-22-198274-serverSimca-7016
+[INFO] [launch]: Default logging verbosity is set to INFO
+[ERROR] [launch]: Caught exception in launch (see debug for traceback): unbound prefix: line 95, column 8

@@ -18,7 +18,7 @@ from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
 from launch.substitutions import LaunchConfiguration
-from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.conditions import IfCondition
 from nav2_common.launch import RewrittenYaml
@@ -88,11 +88,17 @@ def generate_launch_description():
     # simulator launch
     ld.add_action(gazebo_cmd)
 
-    # robot localization launch
-    ld.add_action(robot_localization_cmd)
+    # robot localization launch (delayed 8s to wait for Gazebo and bridge)
+    ld.add_action(TimerAction(
+        period=8.0,
+        actions=[robot_localization_cmd]
+    ))
 
-    # navigation2 launch
-    ld.add_action(navigation2_cmd)
+    # navigation2 launch (delayed 10s to wait for EKF to start publishing TF)
+    ld.add_action(TimerAction(
+        period=10.0,
+        actions=[navigation2_cmd]
+    ))
 
     # viz launch
     ld.add_action(declare_use_rviz_cmd)

@@ -17,19 +17,24 @@
   direction: GZ_TO_ROS
 
 # 3. TRANSFORMS (TF Dinámico: Odom -> Base_link)
-- ros_topic_name: "tf"
-  gz_topic_name: "tf"
-  ros_type_name: "tf2_msgs/msg/TFMessage"
-  gz_type_name: "gz.msgs.Pose_V"
-  direction: GZ_TO_ROS
+# COMENTADO: El EKF publica odom->base_footprint, no necesitamos esto del bridge
+# - ros_topic_name: "tf"
+#   gz_topic_name: "tf"
+#   ros_type_name: "tf2_msgs/msg/TFMessage"
+#   gz_type_name: "gz.msgs.Pose_V"
+#   direction: GZ_TO_ROS
 
 # 4. TRANSFORMS (TF Estático: Base_link -> Lidar, etc)
-# Añadimos esto por seguridad para Nav2
-- ros_topic_name: "tf_static"
-  gz_topic_name: "tf_static"
-  ros_type_name: "tf2_msgs/msg/TFMessage"
-  gz_type_name: "gz.msgs.Pose_V"
-  direction: GZ_TO_ROS
+# COMENTADO: robot_state_publisher ya publica tf_static desde el URDF
+# El bridge causaba conflicto QoS (DURABILITY_QOS_POLICY)
+# - ros_topic_name: "tf_static"
+#   gz_topic_name: "tf_static"
+#   ros_type_name: "tf2_msgs/msg/TFMessage"
+#   gz_type_name: "gz.msgs.Pose_V"
+#   direction: GZ_TO_ROS
+#   publisher_qos:
+#     durability: transient_local
+#     reliability: reliable
 
 # 5. JOINT STATES (Para que RViz vea las ruedas)
 - ros_topic_name: "joint_states"
