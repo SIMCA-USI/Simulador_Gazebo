@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import find_packages, setup
 import os
 from glob import glob
 
@@ -7,7 +7,7 @@ package_name = 'mutt_robot'
 setup(
     name=package_name,
     version='0.0.0',
-    packages=[package_name],  # <- Asegúrate de incluir tu carpeta de código
+    packages=find_packages(exclude=['test']),  # <- Detecta mutt_robot y mutt_robot.utils
     data_files=[
         ('share/ament_index/resource_index/packages', [f'resource/{package_name}']),
         (f'share/{package_name}', ['package.xml']),
@@ -28,7 +28,9 @@ setup(
     license='MIT',
     entry_points={
         'console_scripts': [
-            'interactive_waypoint_follower = mutt_robot.interactive_waypoint_follower:main'
+            'interactive_waypoint_follower = mutt_robot.interactive_waypoint_follower:main',
+            'gps_waypoint_logger = mutt_robot.gps_waypoint_logger:main',
+            'logged_waypoint_follower = mutt_robot.logged_waypoint_follower:main',
         ],
     },
 )
