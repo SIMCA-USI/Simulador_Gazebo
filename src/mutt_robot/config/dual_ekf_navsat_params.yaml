@@ -121,9 +121,11 @@ navsat_transform:
     frequency: 30.0
     delay: 3.0
     magnetic_declination_radians: 0.0
-    yaw_offset: 1.570796327  # Gazebo suele tener el Norte en el eje X (90 grados)
+    yaw_offset: 0.0
     zero_altitude: true
     broadcast_cartesian_transform: true
     publish_filtered_gps: true
     use_odometry_yaw: true
-    wait_for_datum: true
+    # Datum ajustado para coincidir con spawn en (100, 100) del mundo Gazebo
+    # Calculado desde origen (38.161479, -122.454630) + offset (100m, 100m)
+    datum: [38.162380, -122.453487, 0.0]

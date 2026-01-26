@@ -72,8 +72,8 @@ def generate_launch_description():
             arguments=[
                 '-name', robot_name,
                 '-topic', 'robot_description',
-                '-x', '100.0',  # Posición X
-                '-y', '100.0',  # Posición Y
+                '-x', '100.0',  # Posición X (sobre la pista)
+                '-y', '100.0',  # Posición Y (sobre la pista)
                 '-z', '7.0',    # Posición Z (Altura)
                 '-R', '0.0',    # Roll
                 '-P', '0.0',    # Pitch

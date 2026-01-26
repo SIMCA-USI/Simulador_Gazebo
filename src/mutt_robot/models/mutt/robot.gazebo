@@ -177,13 +177,13 @@
             <horizontal>
             <noise type="gaussian">
                 <mean>0.0</mean>
-                <stddev>1.0</stddev>
+                <stddev>0.0</stddev>
             </noise>
             </horizontal>
             <vertical>
             <noise type="gaussian">
                 <mean>0.0</mean>
-                <stddev>1.0</stddev>
+                <stddev>0.0</stddev>
             </noise>
             </vertical>
         </position_sensing>
